@@ -203,7 +203,7 @@ export const search = (
   if (!fuse) {
     fuse = new Fuse<Country>(data, options)
   }
-  if (filter && filter !== '') {
+  if (filter && filter !== '' && filter !== "+") {
     const formatFilter = filter.replace("+", "")
     const result = fuse.search(formatFilter)
     return result
