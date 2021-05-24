@@ -204,7 +204,8 @@ export const search = (
     fuse = new Fuse<Country>(data, options)
   }
   if (filter && filter !== '') {
-    const result = fuse.search(filter)
+    const formatFilter = filter.replace("+", "")
+    const result = fuse.search(formatFilter)
     return result
   } else {
     return data
